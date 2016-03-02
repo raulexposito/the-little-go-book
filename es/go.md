@@ -178,7 +178,7 @@ A la hora de desarrollar puedes utilizar tanto `go run` como `go build`. Sin emb
 
 Espero que el código que acabamos de ejecutar sea entendible. Hemos creado una función y hemos mostrado un string con la función predefinida `println`. ¿El comando `go run` sabe qué tiene que ejecutar porque sólo tiene una elección? No. En Go, el punto de entrada de un programa es una función llamada `main` ubicada en el paquete `main`.
 
-Hablaremos más de paquetes en el capítulo siguiente. De momento, mientras nos centramos en entender los bases de Go, vamos a escribir nuestro código en el paquete `main`.
+Hablaremos más de paquetes en el capítulo siguiente. De momento, mientras nos centramos en entender las bases de Go, vamos a escribir nuestro código en el paquete `main`.
 
 Si quieres, puedes modificar el código anterior y cambiar el nombre del paquete. Si lo ejecutas mediante `go run` deberías obtener un mensaje de error. Tras esto, vuelve a dejar el nombre de `main` pero usa un nombre de función diferente, deberías ver otro mensaje de error. Prueba a hacer los mismos cambios pero ejecutando `go build` esta vez. Observa que el código compila, aunque no hay ningún punto de entrada para hacerlo funcionar. Esta situación es perfectamente normal cuando estás construyendo una librería.
 
@@ -228,7 +228,7 @@ func main() {
 }
 ```
 
-Deberías obtener dos errores indicando que `fmt` y `os` están siendo importados pero no usados. ¿Puede ser esto molesto? Por supuesto que si. A medida que vaya pasando el tiempo te acostumbrarás (aunque a veces puede seguir siendo molesto). Go es estricto en este sentido porque los import que no se utilicen pueden ralentizar la compilación; aunque es cierto que es un problema del cual la mayoría de nosotros no se preocupa.
+Deberías obtener dos errores indicando que `fmt` y `os` están siendo importados pero no usados. ¿Puede ser esto molesto? Por supuesto que sí. A medida que vaya pasando el tiempo te acostumbrarás (aunque a veces puede seguir siendo molesto). Go es estricto en este sentido porque los import que no se utilicen pueden ralentizar la compilación; aunque es cierto que es un problema del cual la mayoría de nosotros no se preocupa.
 
 Otro detalle a tener en cuenta es que la librería estándar de Go está bien documentada. Puedes echar un vistazo a <http://golang.org/pkg/fmt/#Println> para aprender más sobre la función `Println` que hemos usado. Puedes pinchar sobre el encabezado y ver el código fuente. Es más, en la parte de arriba de la página podrás saber más sobre las capacidades de formato de Go.
 
@@ -325,7 +325,7 @@ func main() {
 
 Aunque es la segunda vez que se utiliza `:=` con `power`, el compilador no se quejará ya que verá que `name` es una variable nueva y, por tanto, permite `:=`. Sin embargo, no puedes cambiar el tipo de `power`. Fue declarada (implícitamente) como entera y, por ello, sólo se le pueden asignar enteros.
 
-Lo último que deber saber por ahora es que, como ocurre con los imports, Go no te va a permitir tener variables sin utilizar. Por ejemplo:
+Lo último que debes saber por ahora es que, como ocurre con los imports, Go no te va a permitir tener variables sin utilizar. Por ejemplo:
 
 
 ```go
