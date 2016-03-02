@@ -41,7 +41,7 @@ Tienes que tener instaladas [algunas fuentes](https://github.com/karlseguin/the-
 
 O puedes cambiarlas por otras si quieres. Ten en cuenta que las fuentes pueden acarrear [problemas de generación](https://github.com/karlseguin/the-little-redis-book/issues/26).
 
-#### Contrucción
+#### Construcción
 
 Ejecuta `make es/go.pdf`.
 
