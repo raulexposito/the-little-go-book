@@ -742,7 +742,7 @@ Los arrays son eficientes a la par que rígidos, pero a menudo no podemos saber 
 
 ## Slices
 
-En Go raramente, si es que ocurre alguna vez, se utilizan arrays directamente: en su lugar utilizamos slices. Un slice en una estructura ligera que encapsula y representa una porción de un array. Hay varias formas de crear un slice, la primera es una ligera variación de cómo se crea un array:
+En Go raramente, si es que ocurre alguna vez, se utilizan arrays directamente: en su lugar utilizamos slices. Un slice es una estructura ligera que encapsula y representa una porción de un array. Hay varias formas de crear un slice, la primera es una ligera variación de cómo se crea un array:
 
 ```go
 scores := []int{1,4,293,4,9}
