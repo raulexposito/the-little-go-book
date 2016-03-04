@@ -210,7 +210,7 @@ El cual se puede ejecutar a través de:
 go run main.go 9000
 ```
 
-En este caso estamos usando dos paquetes estándar de Go: `fmt` y `os`. Hemos presentado, además, otra función predefinida: `len`. `len` devuelve el tamaño de un string, o el número de valores de un diccionario o, como podemos ver aquí, el número de elementos de un array. Si te estás preguntado que por qué espera 2 parámetros es porque el primer argumento -- en el índice 0 -- es siempre la ruta al ejecutable que está en marcha. (Puedes modificar el programa para que lo muestre y así lo puedas ver por tí mismo)
+En este caso estamos usando dos paquetes estándar de Go: `fmt` y `os`. Hemos presentado, además, otra función predefinida: `len`. `len` devuelve el tamaño de un string, o el número de valores de un diccionario o, como podemos ver aquí, el número de elementos de un array. Si te estás preguntado que por qué espera 2 parámetros es porque el primer argumento -- en el índice 0 -- es siempre la ruta al ejecutable que está en marcha. (Puedes modificar el programa para que lo muestre y así lo puedas ver por ti mismo)
 
 Es probable que hayas observado que ponemos el nombre del paquete antes que el nombre de la función: `fmt.Println`. Esta forma de trabajar es diferente a la que puedes conocer de otros lenguajes. Aprenderemos más sobre paquetes en los próximos capitulos: de momento, saber cómo importarlos y cómo usarlos es un buen punto de partida.
 
@@ -555,7 +555,7 @@ goku := new(Saiyan)
 goku := &Saiyan{}
 ```
 
-Cuál uses depende de tí, pero verás que la mayoría de la gente prefiere el segundo cuando hay campos que inicializar, ya que suele ser más fácil de leer:
+Cuál uses depende de ti, pero verás que la mayoría de la gente prefiere el segundo cuando hay campos que inicializar, ya que suele ser más fácil de leer:
 
 ```go
 goku := new(Saiyan)
@@ -1310,7 +1310,7 @@ Pasarás a encontrarte cómodo con la forma en la que estructurar tu código tra
 
 La forma en la que Go gestiona la visibilidad de los tipos es directa a la par que efectiva, y además es consistente. Hay pocas cosas que no hayamos visto todavía, como las constantes y las variables globales, pero puedes descansar tranquilo, su visibilidad sigue las mismas reglas de nombrado.
 
-Para terminar, puede que te lleve algún tiempo encontrar la utilidad de los interfaces si son nuevos para tí. Sin embargo, la primera vez que te encuentres con una función que espera algo como `io.Reader` agradecerás al autor que no haya pedido más de lo que realmente necesitaba.
+Para terminar, puede que te lleve algún tiempo encontrar la utilidad de los interfaces si son nuevos para ti. Sin embargo, la primera vez que te encuentres con una función que espera algo como `io.Reader` agradecerás al autor que no haya pedido más de lo que realmente necesitaba.
 
 # Capítulo 5 - Exquisiteces
 
@@ -1497,7 +1497,7 @@ byts := []byte(stra)
 strb := string(byts)
 ```
 
-De hecho, este tipo de conversión es común también entre otros tipos. Algunas funciones esperan explícitamente un `int32` o un `int64` o sus homólogos sin signo. Puede que te descubras a tí mismo haciendo cosas como esta:
+De hecho, este tipo de conversión es común también entre otros tipos. Algunas funciones esperan explícitamente un `int32` o un `int64` o sus homólogos sin signo. Puede que te descubras a ti mismo haciendo cosas como esta:
 
 ```go
 int64(count)
