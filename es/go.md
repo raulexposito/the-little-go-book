@@ -1241,7 +1241,7 @@ Si utilizas `go get -u` actualizarás todos los paquetes (también puedes actual
 
 Es probable que, con el tiempo, encuentres `go get` algo insuficiente por una razón: no hay forma de especificar una revisión ya que siempre utiliza master/head/trunk/default. Esto puede ser un problema incluso mayor si tienes dos o más proyectos que necesitan versiones diferentes de la misma librería.
 
-Para solucionar este problema puedes usar una herramienta de gestión de dependencias de terceros. Todavía son jóvenes pero las dos más promotedoras son [goop](https://github.com/nitrous-io/goop) y [godep](https://github.com/tools/godep). Hay una lista más completa en la [go-wiki](https://code.google.com/p/go-wiki/wiki/PackageManagementTools).
+Para solucionar este problema puedes usar una herramienta de gestión de dependencias de terceros. Todavía son jóvenes pero las dos más prometedoras son [goop](https://github.com/nitrous-io/goop) y [godep](https://github.com/tools/godep). Hay una lista más completa en la [go-wiki](https://code.google.com/p/go-wiki/wiki/PackageManagementTools).
 
 ## Interfaces
 
@@ -1436,7 +1436,7 @@ Dale una oportunidad. Hará algo más que indentar tu código: alineará las dec
 
 ## If Inicializado
 
-Go soporta un comando if ligeramente modificado, en el cual una valor puede ser inicializado antes que la condición que va a ser evaluada:
+Go soporta un comando if ligeramente modificado, en el cual un valor puede ser inicializado antes que la condición que va a ser evaluada:
 
 ```go
 if x := 10; count > x {
