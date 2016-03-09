@@ -1839,7 +1839,7 @@ Puedes obsevar cómo crece y crece hasta que se satura, momento en el que enviar
 
 Incluso con buffers, llega el momento en el cual necesitamos comenzar a descartar mensajes. No podemos usar una cantidad infinita de memoria con la esperanza de que un worker la libere. Por este motivo podemos usar `select`.
 
-Sintácticamente, un `select` se parece un poco a un switch. Con él podremos indicar qué hacer cuando el canal no esté dispinible para enviar mas datos a través de él. Vamos a eliminar el buffer del canal para ver con más claridad cómo funciona `select`:
+Sintácticamente, un `select` se parece un poco a un switch. Con él podremos indicar qué hacer cuando el canal no esté dispinible para enviar más datos a través de él. Vamos a eliminar el buffer del canal para ver con más claridad cómo funciona `select`:
 
 ```go
 c := make(chan int)
@@ -1936,9 +1936,9 @@ Dicho esto, personalmente utilizo mucho las primitivas de sincronización que ex
 
 # Conclusión
 
-He podido oir opiniones que dicen que Go es un lenguaje *aburrido*. Aburrido porque es fácil de aprender, fácil de utilizar y, lo más importante, fácil de leer. Quizá yo mismo he causado algún perjuicio, hemos *pasado* tres capítulos hablando sobre los tipos de datos y cómo declarar variables después de todo.
+He podido oír opiniones que dicen que Go es un lenguaje *aburrido*. Aburrido porque es fácil de aprender, fácil de utilizar y, lo más importante, fácil de leer. Quizá yo mismo he causado algún perjuicio, hemos *pasado* tres capítulos hablando sobre los tipos de datos y cómo declarar variables después de todo.
 
-Si tienes background con algún lenguaje estáticamente tipado mucho de lo que hemos hablado habrá sido, en el mejor de los casos, un recordatorio. Que Go haga que los punteros o que los slices sean poco más que wappers no es agobiante para desarrolladores Java o C# experimentados.
+Si tienes background con algún lenguaje estáticamente tipado mucho de lo que hemos hablado habrá sido, en el mejor de los casos, un recordatorio. Que Go haga que los punteros o que los slices sean poco más que wrappers no es agobiante para desarrolladores Java o C# experimentados.
 
 Si has trabajado principalmente con lenguajes dinámicos puede que lo veas ligeramente diferente. *Es* un pequeño reto que aprender, no es sólo conocer la variedad de sintaxis que hay sobre declaración e inicialización de variables. Aunque sea un fan de Go, creo que el aprendijaze siempre va paralelo a la simplicidad. De todos modos hay que aprender algunas reglas básicas (como que sólo puedes declarar la variable una vez y que `:=` declara la variable) y tener unos conocimientos básicos (como que `new(X)` o `&X{}` sólo reservan memoria mientras que los slices, los mapas y los canales requieren inicialización y, por ello, el uso de `make`).
 
