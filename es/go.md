@@ -1685,7 +1685,7 @@ func main() {
 }
 ```
 
-Hay mucho más sobre programación concurrente que lo que hemos visto hasta ahora. Existe, ya que podemos hacer varias lecturas a la vez, otro mutex conocido como mutex de lectura-escritura, el cual presenta dos funciones de bloqueo: por un lado se pueden bloquear lectores y, por otro, escritores. En Go, `sync.RWMutex` es un bloqueador de este estilo que, junto a los métodos `Lock` y `Unlock` de `sync.Mutex`, también incluye los métodos `RLock` y `RUnlock`, donde `R` significa `Lectura`. Aunque los mutex de lectura-escritura se utilizan comúnmente suponen una carga extra para los desarrolladores: debemos prestar atención no sólo a quiénes están accediendo a los datos sino también a cómo lo hacen.
+Hay mucho más sobre programación concurrente que lo que hemos visto hasta ahora. Existe, ya que podemos hacer varias lecturas a la vez, otro mutex conocido como mutex de lectura-escritura, el cual presenta dos funciones de bloqueo: por un lado se pueden bloquear lectores y, por otro, escritores. En Go, `sync.RWMutex` es un bloqueador de este estilo que, junto a los métodos `Lock` y `Unlock` de `sync.Mutex`, también incluye los métodos `RLock` y `RUnlock`, donde `R` significa `Lectura`. Aunque los mutex de lectura-escritura se utilizan comúnmente, suponen una carga extra para los desarrolladores: debemos prestar atención no sólo a quiénes están accediendo a los datos sino también a cómo lo hacen.
 
 Gran parte de la programación concurrente tiene que ver con la coordinación de varias go-rutinas. Por ejemplo, dejar al proceso durmiendo 10 milisegundos no es una solución particularmente elegante, ¿qué ocurre si la go-rutina necesita más de 10 milisegundos?, ¿qué pasa si tarda menos y simplemente estamos desperdiciando ciclos de reloj?, Es más, ¿qué ocurre si, en vez de esperar a que las go-rutinas acaben, simplemente hacemos que digan a las demás *hey, ¡tengo datos nuevos para que te encargues de procesarlos!*?
 
@@ -1813,7 +1813,7 @@ for {
 }
 ```
 
-El código del main, el lugar donde se generan los números aleatorios, se queda bloqueado ya que envia datos al canal pero no hay receptores disponibles.
+El código del main, el lugar donde se generan los números aleatorios, se queda bloqueado ya que envía datos al canal pero no hay receptores disponibles.
 
 En los casos en los cuales necesites garantizar que los datos están siendo procesados seguramente necesites bloquear al cliente. En otros casos probablemente te convenga relajar estas garantías. Hay unas pocas estrategias populares para hacer esto. La primera es almacenar los datos en un buffer: si no hay workers disponibles, almacenamos temporalmente los datos en una especie de cola. Los canales tienen la capacidad de poder almacenar datos en un buffer, y de hecho podemos darle una longitud cuando creamos nuestro canal con `make`.
 
@@ -1821,7 +1821,7 @@ En los casos en los cuales necesites garantizar que los datos están siendo proc
 c := make(chan int, 100)
 ```
 
-Puedes hacer este cambio, pero observa que el procesamiento seguirá causando estragos. Los canales con buffers no añadirán más capacidad: únicamente facilitan una cola en la que almacenar trabajos pendientes que ayuden a lidiar con picos de trabajo. En nuestro ejemplo estamos empujando contínuamente más datos de los que nuestros workers pueden gestionar.
+Puedes hacer este cambio, pero observa que el procesamiento seguirá causando estragos. Los canales con buffers no añadirán más capacidad: únicamente facilitan una cola en la que almacenar trabajos pendientes que ayuden a lidiar con picos de trabajo. En nuestro ejemplo estamos empujando continuamente más datos de los que nuestros workers pueden gestionar.
 
 Sin embargo, puede tener sentido comprobar que nuestro canal con buffer está, de hecho, almacenando datos en el buffer utilizando `len`:
 
