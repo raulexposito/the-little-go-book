@@ -17,15 +17,15 @@ La última versión del código fuente de este libro puede encontrarse en:
 
 # Introducción
 
-Siempre he vivido una relación de amor-odio cuando se trata de aprender nuevos lenguajes. Por una parte, los lenguajes son tan fundamentales en lo que hacemos que incluso pequeños matices pueden provocar un impacto considerable. Ese momento *ajá* que se produce cuando algo encaja puede tener un efecto perdurable en nuestra forma de programar y puede redefinir nuestras expectativas en otros lenguajes. Por contra, el aprender nuevos lenguajes es algo que no termina nunca. Aprender nuevas palabras reservadas, tipos de datos, estilos de programación y descubrir librerías, comunidades y paradigmas supone un montón de trabajo a priori difícil de justificar. Comparados con cualquier otra cosa que tengamos que aprender, los nuevos lenguajes a menudo parecen ser una mala inversión de nuestro tiempo,
+Siempre he vivido una relación de amor-odio cuando se trata de aprender nuevos lenguajes. Por una parte, los lenguajes son tan fundamentales en lo que hacemos que incluso pequeños matices pueden provocar un impacto considerable. Ese momento *ajá* que se produce cuando algo encaja puede tener un efecto perdurable en nuestra forma de programar y puede redefinir nuestras expectativas en otros lenguajes. Por contra, el aprender nuevos lenguajes es algo que no termina nunca. Aprender nuevas palabras reservadas, tipos de datos, estilos de programación y descubrir librerías, comunidades y paradigmas supone un montón de trabajo a priori difícil de justificar. Comparados con cualquier otra cosa que tengamos que aprender, los nuevos lenguajes a menudo parecen ser una mala inversión de nuestro tiempo.
 
-Dicho esto, *tenemos* que seguir adelante. *Tenemos* que dar los pasos porque, de nuevo, los lenguajes son el elemento principal de lo que hacemos. Aunque el aprendizaje sea contínuo e infinito, éste ayuda a ampliar nuestra visión e impacta en nuestra productividad, la legibilidad de nuestro código, el rendimiento, la testeabilidad, la forma en la que gestionamos dependencias, la gestión de errores, la documentación, el profiling, nuestra presencia en comunidades, nuestro conocimiento de librerías estándar, y mucho más. ¿Hay alguna manera positiva de decir *la sarna con gusto no pica*?
+Dicho esto, *tenemos* que seguir adelante. *Tenemos* que dar los pasos porque, de nuevo, los lenguajes son el elemento principal de lo que hacemos. Aunque el aprendizaje sea continuo e infinito, éste ayuda a ampliar nuestra visión e impacta en nuestra productividad, la legibilidad de nuestro código, el rendimiento, la testeabilidad, la forma en la que gestionamos dependencias, la gestión de errores, la documentación, el profiling, nuestra presencia en comunidades, nuestro conocimiento de librerías estándar, y mucho más. ¿Hay alguna manera positiva de decir *la sarna con gusto no pica*?
 
 Todo esto nos deja con una pregunta importante: **¿Por qué Go?** Para mí hay dos motivos convincentes: el primero es que es un lenguaje relativamente sencillo con una librería estandar relativamente simple. Go tiene la naturaleza de simplificar la complejidad que hemos visto incluida en los lenguajes de programación en el último par de décadas mediante el uso de varios mecanismos. El otro motivo es que para muchos desarrolladores puede servir como complemento para su arsenal.
 
 Go fue construido para ser utilizado como un lenguaje orientado a software de sistemas (es decir, sistemas operativos, drivers de dispositivos), lo cual animó a desarrolladores de C y C++. Según el equipo de Go, y según la percepción que yo también tengo, los desarrolladores de aplicaciones, y no los desarrolladores de software de sistemas, se han convertido en los principales usuarios de Go. ¿Por qué? No puedo hablar con autoridad acerca de los desarrolladores de software de sistemas, pero para todos aquellos que construimos aplicaciones web, servicios, aplicaciones de escritorio y software por el estilo, nos ha cubierto la necesidad de disponer de algo que nos permita desarrollar aplicaciones de bajo y de alto nivel.
 
-Quizá sea la mensajería, las cachés, los análisis de datos computacionalmente muy costosos, los interfaces por linea de comandos, los logs o la monitorización. No sé cómo etiquetarlo, pero a lo largo de mi vida laboral el software de sistemas ha ido creciendo en complejidad. Es *posible* construir estos sistemas con Ruby o Python o alguna otra cosa (como mucha gente hace), pero ese tipo de software puede beneficiarse de un sistema con un tipado rígido que brinde mejor rendimiento. Del mismo modo, *puedes* usar Go para construir aplicaciones web (como mucha gente hace), aunque yo todavía prefiero, con mucho margen, la expresividad de Node o Ruby para este tipo de desarrollos.
+Quizá sea la mensajería, las cachés, los análisis de datos computacionalmente muy costosos, los interfaces por línea de comandos, los logs o la monitorización. No sé cómo etiquetarlo, pero a lo largo de mi vida laboral el software de sistemas ha ido creciendo en complejidad. Es *posible* construir estos sistemas con Ruby o Python o alguna otra cosa (como mucha gente hace), pero ese tipo de software puede beneficiarse de un sistema con un tipado rígido que brinde mejor rendimiento. Del mismo modo, *puedes* usar Go para construir aplicaciones web (como mucha gente hace), aunque yo todavía prefiero, con mucho margen, la expresividad de Node o Ruby para este tipo de desarrollos.
 
 Hay otras áreas en las que Go es excelente. Por ejemplo, no existen dependencias a la hora de ejecutar programas compilados con Go. No hay que preocuparse sobre si los usuarios tienen Ruby o la JVM instalada o, si la tienen, qué versión tendrán. Por este motivo Go se está convirtiendo en un lenguaje popular con el que desarrollar aplicaciones de línea de comandos u otro tipo de programas de utilidades que necesiten ser distribuibles (por ejemplo, un recolector de log).
 
@@ -178,7 +178,7 @@ A la hora de desarrollar puedes utilizar tanto `go run` como `go build`. Sin emb
 
 Espero que el código que acabamos de ejecutar sea entendible. Hemos creado una función y hemos mostrado un string con la función predefinida `println`. ¿El comando `go run` sabe qué tiene que ejecutar porque sólo tiene una elección? No. En Go, el punto de entrada de un programa es una función llamada `main` ubicada en el paquete `main`.
 
-Hablaremos más de paquetes en el capítulo siguiente. De momento, mientras nos centramos en entender los bases de Go, vamos a escribir nuestro código en el paquete `main`.
+Hablaremos más de paquetes en el capítulo siguiente. De momento, mientras nos centramos en entender las bases de Go, vamos a escribir nuestro código en el paquete `main`.
 
 Si quieres, puedes modificar el código anterior y cambiar el nombre del paquete. Si lo ejecutas mediante `go run` deberías obtener un mensaje de error. Tras esto, vuelve a dejar el nombre de `main` pero usa un nombre de función diferente, deberías ver otro mensaje de error. Prueba a hacer los mismos cambios pero ejecutando `go build` esta vez. Observa que el código compila, aunque no hay ningún punto de entrada para hacerlo funcionar. Esta situación es perfectamente normal cuando estás construyendo una librería.
 
@@ -210,7 +210,7 @@ El cual se puede ejecutar a través de:
 go run main.go 9000
 ```
 
-En este caso estamos usando dos paquetes estándar de Go: `fmt` y `os`. Hemos presentado, además, otra función predefinida: `len`. `len` devuelve el tamaño de un string, o el número de valores de un diccionario o, como podemos ver aquí, el número de elementos de un array. Si te estás preguntado que por qué espera 2 parámetros es porque el primer argumento -- en el índice 0 -- es siempre la ruta al ejecutable que está en marcha. (Puedes modificar el programa para que lo muestre y así lo puedas ver por tí mismo)
+En este caso estamos usando dos paquetes estándar de Go: `fmt` y `os`. Hemos presentado, además, otra función predefinida: `len`. `len` devuelve el tamaño de un string, o el número de valores de un diccionario o, como podemos ver aquí, el número de elementos de un array. Si te estás preguntado que por qué espera 2 parámetros es porque el primer argumento -- en el índice 0 -- es siempre la ruta al ejecutable que está en marcha. (Puedes modificar el programa para que lo muestre y así lo puedas ver por ti mismo)
 
 Es probable que hayas observado que ponemos el nombre del paquete antes que el nombre de la función: `fmt.Println`. Esta forma de trabajar es diferente a la que puedes conocer de otros lenguajes. Aprenderemos más sobre paquetes en los próximos capitulos: de momento, saber cómo importarlos y cómo usarlos es un buen punto de partida.
 
@@ -228,7 +228,7 @@ func main() {
 }
 ```
 
-Deberías obtener dos errores indicando que `fmt` y `os` están siendo importados pero no usados. ¿Puede ser esto molesto? Por supuesto que si. A medida que vaya pasando el tiempo te acostumbrarás (aunque a veces puede seguir siendo molesto). Go es estricto en este sentido porque los import que no se utilicen pueden ralentizar la compilación; aunque es cierto que es un problema del cual la mayoría de nosotros no se preocupa.
+Deberías obtener dos errores indicando que `fmt` y `os` están siendo importados pero no usados. ¿Puede ser esto molesto? Por supuesto que sí. A medida que vaya pasando el tiempo te acostumbrarás (aunque a veces puede seguir siendo molesto). Go es estricto en este sentido porque los import que no se utilicen pueden ralentizar la compilación; aunque es cierto que es un problema del cual la mayoría de nosotros no se preocupa.
 
 Otro detalle a tener en cuenta es que la librería estándar de Go está bien documentada. Puedes echar un vistazo a <http://golang.org/pkg/fmt/#Println> para aprender más sobre la función `Println` que hemos usado. Puedes pinchar sobre el encabezado y ver el código fuente. Es más, en la parte de arriba de la página podrás saber más sobre las capacidades de formato de Go.
 
@@ -325,7 +325,7 @@ func main() {
 
 Aunque es la segunda vez que se utiliza `:=` con `power`, el compilador no se quejará ya que verá que `name` es una variable nueva y, por tanto, permite `:=`. Sin embargo, no puedes cambiar el tipo de `power`. Fue declarada (implícitamente) como entera y, por ello, sólo se le pueden asignar enteros.
 
-Lo último que deber saber por ahora es que, como ocurre con los imports, Go no te va a permitir tener variables sin utilizar. Por ejemplo:
+Lo último que debes saber por ahora es que, como ocurre con los imports, Go no te va a permitir tener variables sin utilizar. Por ejemplo:
 
 
 ```go
@@ -555,7 +555,7 @@ goku := new(Saiyan)
 goku := &Saiyan{}
 ```
 
-Cuál uses depende de tí, pero verás que la mayoría de la gente prefiere el segundo cuando hay campos que inicializar, ya que suele ser más fácil de leer:
+Cuál uses depende de ti, pero verás que la mayoría de la gente prefiere el segundo cuando hay campos que inicializar, ya que suele ser más fácil de leer:
 
 ```go
 goku := new(Saiyan)
@@ -742,7 +742,7 @@ Los arrays son eficientes a la par que rígidos, pero a menudo no podemos saber 
 
 ## Slices
 
-En Go raramente, si es que ocurre alguna vez, se utilizan arrays directamente: en su lugar utilizamos slices. Un slice en una estructura ligera que encapsula y representa una porción de un array. Hay varias formas de crear un slice, la primera es una ligera variación de cómo se crea un array:
+En Go raramente, si es que ocurre alguna vez, se utilizan arrays directamente: en su lugar utilizamos slices. Un slice es una estructura ligera que encapsula y representa una porción de un array. Hay varias formas de crear un slice, la primera es una ligera variación de cómo se crea un array:
 
 ```go
 scores := []int{1,4,293,4,9}
@@ -888,7 +888,7 @@ fmt.Println(scores)
 
 La salida es `[1, 2, 999, 4, 5]`.
 
-Esto cambia tu forma de pensar a la hora de programar. Por ejemplo, hay funciones que reciben la posición como un parámetro. En JavaScript, si quieres buscar el primer espacio en un string (si, ¡los slices funcionan también con strings!) a partir de los primeros cinco caracteres, deberíamos escribir:
+Esto cambia tu forma de pensar a la hora de programar. Por ejemplo, hay funciones que reciben la posición como un parámetro. En JavaScript, si quieres buscar el primer espacio en un string (sí, ¡los slices funcionan también con strings!) a partir de los primeros cinco caracteres, deberíamos escribir:
 
 ```go
 haystack = "the spice must flow";
@@ -973,7 +973,7 @@ Usamos `len` para recuperar el número de claves. Para borrar un valor en base a
 // devuelve 1
 total := len(lookup)
 
-// no devuelve nada, puede ser invicado en una clave que no exista
+// no devuelve nada, puede ser invocado en una clave que no exista
 delete(lookup, "goku")
 ```
 
@@ -1049,7 +1049,7 @@ Ha llegado el momento de ver cómo organizar el código.
 
 ## Paquetes
 
-Para poder utilizar complicadas librerias y tener organizado el código fuente de nuestra aplicación es necesario que aprendamos qué son los paquetes. Los nombres de los paquetes en Go siguen la estructura de directorios de tu workspace. Si estamos desarrollando una aplicación de compras, seguramente empecemos con un nombre de paquete llamado "shopping" y pongamos nuestro código fuente en `$GOPATH/src/shopping/`.
+Para poder utilizar complicadas librerías y tener organizado el código fuente de nuestra aplicación es necesario que aprendamos qué son los paquetes. Los nombres de los paquetes en Go siguen la estructura de directorios de tu workspace. Si estamos desarrollando una aplicación de compras, seguramente empecemos con un nombre de paquete llamado "shopping" y pongamos nuestro código fuente en `$GOPATH/src/shopping/`.
 
 De todos modos no querremos poner todo dentro de ese directorio. Por ejemplo, quizá queramos aislar la lógica de la base de datos dentro de un directorio propio. Para conseguir esto, crearemos un subdirectorio en `$GOPATH/src/shopping/db`. El nombre del paquete dentro de este subdirectorio será simplemente `db`, y para acceder a él desde otro paquete, incluido el propio paquete `shopping`, debemos importar `shopping/db`.
 
@@ -1175,7 +1175,7 @@ $GOPATH/src
       main.go
 ```
 
-`pricecheck.go` seguirá importando `shopping/db`, pero `db.go` importará `shopping/models` en lugar de `shopping` para así romper el cíclo. ya que hemos movido la estructura compartida `Item` a `shopping/models/item.go`, necesitamos cambiar `shopping/db/db.go` para referenciar la estructura `Item` desde el paquete `models`:
+`pricecheck.go` seguirá importando `shopping/db`, pero `db.go` importará `shopping/models` en lugar de `shopping` para así romper el ciclo. ya que hemos movido la estructura compartida `Item` a `shopping/models/item.go`, necesitamos cambiar `shopping/db/db.go` para referenciar la estructura `Item` desde el paquete `models`:
 
 ```go
 package db
@@ -1241,7 +1241,7 @@ Si utilizas `go get -u` actualizarás todos los paquetes (también puedes actual
 
 Es probable que, con el tiempo, encuentres `go get` algo insuficiente por una razón: no hay forma de especificar una revisión ya que siempre utiliza master/head/trunk/default. Esto puede ser un problema incluso mayor si tienes dos o más proyectos que necesitan versiones diferentes de la misma librería.
 
-Para solucionar este problema puedes usar una herramienta de gestión de dependencias de terceros. Todavía son jóvenes pero las dos más promotedoras son [goop](https://github.com/nitrous-io/goop) y [godep](https://github.com/tools/godep). Hay una lista más completa en la [go-wiki](https://code.google.com/p/go-wiki/wiki/PackageManagementTools).
+Para solucionar este problema puedes usar una herramienta de gestión de dependencias de terceros. Todavía son jóvenes pero las dos más prometedoras son [goop](https://github.com/nitrous-io/goop) y [godep](https://github.com/tools/godep). Hay una lista más completa en la [go-wiki](https://code.google.com/p/go-wiki/wiki/PackageManagementTools).
 
 ## Interfaces
 
@@ -1310,7 +1310,7 @@ Pasarás a encontrarte cómodo con la forma en la que estructurar tu código tra
 
 La forma en la que Go gestiona la visibilidad de los tipos es directa a la par que efectiva, y además es consistente. Hay pocas cosas que no hayamos visto todavía, como las constantes y las variables globales, pero puedes descansar tranquilo, su visibilidad sigue las mismas reglas de nombrado.
 
-Para terminar, puede que te lleve algún tiempo encontrar la utilidad de los interfaces si son nuevos para tí. Sin embargo, la primera vez que te encuentres con una función que espera algo como `io.Reader` agradecerás al autor que no haya pedido más de lo que realmente necesitaba.
+Para terminar, puede que te lleve algún tiempo encontrar la utilidad de los interfaces si son nuevos para ti. Sin embargo, la primera vez que te encuentres con una función que espera algo como `io.Reader` agradecerás al autor que no haya pedido más de lo que realmente necesitaba.
 
 # Capítulo 5 - Exquisiteces
 
@@ -1436,7 +1436,7 @@ Dale una oportunidad. Hará algo más que indentar tu código: alineará las dec
 
 ## If Inicializado
 
-Go soporta un comando if ligeramente modificado, en el cual una valor puede ser inicializado antes que la condición que va a ser evaluada:
+Go soporta un comando if ligeramente modificado, en el cual un valor puede ser inicializado antes que la condición que va a ser evaluada:
 
 ```go
 if x := 10; count > x {
@@ -1497,7 +1497,7 @@ byts := []byte(stra)
 strb := string(byts)
 ```
 
-De hecho, este tipo de conversión es común también entre otros tipos. Algunas funciones esperan explícitamente un `int32` o un `int64` o sus homólogos sin signo. Puede que te descubras a tí mismo haciendo cosas como esta:
+De hecho, este tipo de conversión es común también entre otros tipos. Algunas funciones esperan explícitamente un `int32` o un `int64` o sus homólogos sin signo. Puede que te descubras a ti mismo haciendo cosas como esta:
 
 ```go
 int64(count)
@@ -1625,7 +1625,7 @@ func incr() {
 
 Si crees que la salida será `1,2 `, te equivocas y tienes razón a la vez. Es cierto que si ejecutas el código anterior probablemente obtendrás esa salida. Sin embargo, la realidad es que el comportamiento no está definido. ¿Por qué?, porque varias (en este caso dos) go-rutinas están potencialmente escribiendo sobre la misma variable `counter` a la misma vez. O, lo que es peor, una go-rutina puede estar leyendo `counter` mientras la otra actualiza su valor.
 
-¿Es esto relamente peligroso?. Si, desde luego. `counter++` puede parecer únicamente una línea de código, pero en realidad está compuesta de varias instrucciones en ensamblador -- la naturaleza exacta depende de la plataforma sobre la que estés trabajando. Es cierto que, en este ejemplo, lo más normal es que todo vaya bien. Sin embargo, otro posible resultado podría ser que ambas go-rutinas leyesen `counter` cuando su valor es cero y se generase una salida de `1, 1`. Hay otras posibilidades peores, como que el ordenador se cuelgue o que accedamos a otra posición de memoria con datos y los incrementemos.
+¿Es esto relamente peligroso?. Sí, desde luego. `counter++` puede parecer únicamente una línea de código, pero en realidad está compuesta de varias instrucciones en ensamblador -- la naturaleza exacta depende de la plataforma sobre la que estés trabajando. Es cierto que, en este ejemplo, lo más normal es que todo vaya bien. Sin embargo, otro posible resultado podría ser que ambas go-rutinas leyesen `counter` cuando su valor es cero y se generase una salida de `1, 1`. Hay otras posibilidades peores, como que el ordenador se cuelgue o que accedamos a otra posición de memoria con datos y los incrementemos.
 
 La única acción concurrente que puedes hacer con seguridad sobre una variable es leerla. Puedes tener todos los lectores que quieras, pero las escrituras necesitan estar sincronizadas. Hay varias formas de lograr esto, incluyendo el uso de operaciones realmente atómicas que necesitan instrucciones específicas de la CPU. Sin embargo, la aproximación más frecuente es usar un mutex:
 
@@ -1660,7 +1660,7 @@ func incr() {
 
 Un mutex organiza el acceso a un código protegido. El motivo por el cual sencillamente definimos nuestro bloqueo como `lock sync.Mutex` se debe a que el valor por defecto de `sync.Mutex` es el de "desbloqueado"
 
-¿Parece bastante sencillo? El ejemplo anterior es engañoso. Hay un montón de bugs serios que pueden aparecer a la hora de hacer programación concurrente. El primero de ellos es que no siempre resulta obvio saber qué parte del código necesita ser protegida. Puede ser tentador proteger una gran cantidad de código, pero menoscaba la razón principal por la que hacemos programación concurrente. Necesitamos protecciones lo más pequeñas posible: de otro modo convertiremos una autopista de 10 carriles en una que, de repente, se convierte en una de un sólo carril.
+¿Parece bastante sencillo? El ejemplo anterior es engañoso. Hay un montón de bugs serios que pueden aparecer a la hora de hacer programación concurrente. El primero de ellos es que no siempre resulta obvio saber qué parte del código necesita ser protegida. Puede ser tentador proteger una gran cantidad de código, pero menoscaba la razón principal por la que hacemos programación concurrente. Necesitamos protecciones lo más pequeñas posible: de otro modo convertiremos una autopista de 10 carriles en una que, de repente, se convierte en una de un solo carril.
 
 El otro problema tiene que ver con los deadlocks. Con un único bloqueo no hay problema, pero puede ser peligroso si tenemos dos o más en el mismo código, ya que se puede dar el caso de que la go-rutina A posea el bloqueo A pero necesite acceder al bloqueo B, mientras que la go-rutina B posee el bloqueo B pero necesita acceder al bloqueo A.
 
@@ -1685,7 +1685,7 @@ func main() {
 }
 ```
 
-Hay mucho más sobre programación concurrente que lo que hemos visto hasta ahora. Existe, ya que podemos hacer varias lecturas a la vez, otro mutex conocido como mutex de lectura-escritura, el cual presenta dos funciones de bloqueo: por un lado se pueden bloquear lectores y, por otro, escritores. En Go, `sync.RWMutex` es un bloqueador de este estilo que, junto a los métodos `Lock` y `Unlock` de `sync.Mutex`, también incluye los métodos `RLock` y `RUnlock`, donde `R` significa `Lectura`. Aunque los mutex de lectura-escritura se utilizan comúnmente suponen una carga extra para los desarrolladores: debemos prestar atención no sólo a quiénes están accediendo a los datos sino también a cómo lo hacen.
+Hay mucho más sobre programación concurrente que lo que hemos visto hasta ahora. Existe, ya que podemos hacer varias lecturas a la vez, otro mutex conocido como mutex de lectura-escritura, el cual presenta dos funciones de bloqueo: por un lado se pueden bloquear lectores y, por otro, escritores. En Go, `sync.RWMutex` es un bloqueador de este estilo que, junto a los métodos `Lock` y `Unlock` de `sync.Mutex`, también incluye los métodos `RLock` y `RUnlock`, donde `R` significa `Lectura`. Aunque los mutex de lectura-escritura se utilizan comúnmente, suponen una carga extra para los desarrolladores: debemos prestar atención no sólo a quiénes están accediendo a los datos sino también a cómo lo hacen.
 
 Gran parte de la programación concurrente tiene que ver con la coordinación de varias go-rutinas. Por ejemplo, dejar al proceso durmiendo 10 milisegundos no es una solución particularmente elegante, ¿qué ocurre si la go-rutina necesita más de 10 milisegundos?, ¿qué pasa si tarda menos y simplemente estamos desperdiciando ciclos de reloj?, Es más, ¿qué ocurre si, en vez de esperar a que las go-rutinas acaben, simplemente hacemos que digan a las demás *hey, ¡tengo datos nuevos para que te encargues de procesarlos!*?
 
@@ -1697,7 +1697,7 @@ El reto de la programación concurrente aparece a la hora de tener que compartir
 
 Los canales ayudan a que la programación concurrente sea más sencilla haciendo desaparecer los datos compartidos. Un canal es un medio de comunicación entre go-rutinas que se utiliza para enviar datos. En otras palabras, una go-rutina que quiera enviar datos a otra debe hacerlo mediante un canal. El resultado es que, en un momento puntual, sólo una go-rutina tiene acceso a los datos.
 
-Los canales, como todo lo demás, tienen tipos. En concreto, tienen el mismo tipo que los datos que se van a mandar a través de ellos. Por ejemplo, para crear un canal envíe enteros debemos usar:
+Los canales, como todo lo demás, tienen tipos. En concreto, tienen el mismo tipo que los datos que se van a mandar a través de ellos. Por ejemplo, para crear un canal que envíe enteros debemos usar:
 
 ```go
 c := make(chan int)
@@ -1813,7 +1813,7 @@ for {
 }
 ```
 
-El código del main, el lugar donde se generan los números aleatorios, se queda bloqueado ya que envia datos al canal pero no hay receptores disponibles.
+El código del main, el lugar donde se generan los números aleatorios, se queda bloqueado ya que envía datos al canal pero no hay receptores disponibles.
 
 En los casos en los cuales necesites garantizar que los datos están siendo procesados seguramente necesites bloquear al cliente. En otros casos probablemente te convenga relajar estas garantías. Hay unas pocas estrategias populares para hacer esto. La primera es almacenar los datos en un buffer: si no hay workers disponibles, almacenamos temporalmente los datos en una especie de cola. Los canales tienen la capacidad de poder almacenar datos en un buffer, y de hecho podemos darle una longitud cuando creamos nuestro canal con `make`.
 
@@ -1821,7 +1821,7 @@ En los casos en los cuales necesites garantizar que los datos están siendo proc
 c := make(chan int, 100)
 ```
 
-Puedes hacer este cambio, pero observa que el procesamiento seguirá causando estragos. Los canales con buffers no añadirán más capacidad: únicamente facilitan una cola en la que almacenar trabajos pendientes que ayuden a lidiar con picos de trabajo. En nuestro ejemplo estamos empujando contínuamente más datos de los que nuestros workers pueden gestionar.
+Puedes hacer este cambio, pero observa que el procesamiento seguirá causando estragos. Los canales con buffers no añadirán más capacidad: únicamente facilitan una cola en la que almacenar trabajos pendientes que ayuden a lidiar con picos de trabajo. En nuestro ejemplo estamos empujando continuamente más datos de los que nuestros workers pueden gestionar.
 
 Sin embargo, puede tener sentido comprobar que nuestro canal con buffer está, de hecho, almacenando datos en el buffer utilizando `len`:
 
@@ -1839,7 +1839,7 @@ Puedes obsevar cómo crece y crece hasta que se satura, momento en el que enviar
 
 Incluso con buffers, llega el momento en el cual necesitamos comenzar a descartar mensajes. No podemos usar una cantidad infinita de memoria con la esperanza de que un worker la libere. Por este motivo podemos usar `select`.
 
-Sintácticamente, un `select` se parece un poco a un switch. Con él podremos indicar qué hacer cuando el canal no esté dispinible para enviar mas datos a través de él. Vamos a eliminar el buffer del canal para ver con más claridad cómo funciona `select`:
+Sintácticamente, un `select` se parece un poco a un switch. Con él podremos indicar qué hacer cuando el canal no esté dispinible para enviar más datos a través de él. Vamos a eliminar el buffer del canal para ver con más claridad cómo funciona `select`:
 
 ```go
 c := make(chan int)
@@ -1936,9 +1936,9 @@ Dicho esto, personalmente utilizo mucho las primitivas de sincronización que ex
 
 # Conclusión
 
-He podido oir opiniones que dicen que Go es un lenguaje *aburrido*. Aburrido porque es fácil de aprender, fácil de utilizar y, lo más importante, fácil de leer. Quizá yo mismo he causado algún perjuicio, hemos *pasado* tres capítulos hablando sobre los tipos de datos y cómo declarar variables después de todo.
+He podido oír opiniones que dicen que Go es un lenguaje *aburrido*. Aburrido porque es fácil de aprender, fácil de utilizar y, lo más importante, fácil de leer. Quizá yo mismo he causado algún perjuicio, hemos *pasado* tres capítulos hablando sobre los tipos de datos y cómo declarar variables después de todo.
 
-Si tienes background con algún lenguaje estáticamente tipado mucho de lo que hemos hablado habrá sido, en el mejor de los casos, un recordatorio. Que Go haga que los punteros o que los slices sean poco más que wappers no es agobiante para desarrolladores Java o C# experimentados.
+Si tienes background con algún lenguaje estáticamente tipado mucho de lo que hemos hablado habrá sido, en el mejor de los casos, un recordatorio. Que Go haga que los punteros o que los slices sean poco más que wrappers no es agobiante para desarrolladores Java o C# experimentados.
 
 Si has trabajado principalmente con lenguajes dinámicos puede que lo veas ligeramente diferente. *Es* un pequeño reto que aprender, no es sólo conocer la variedad de sintaxis que hay sobre declaración e inicialización de variables. Aunque sea un fan de Go, creo que el aprendijaze siempre va paralelo a la simplicidad. De todos modos hay que aprender algunas reglas básicas (como que sólo puedes declarar la variable una vez y que `:=` declara la variable) y tener unos conocimientos básicos (como que `new(X)` o `&X{}` sólo reservan memoria mientras que los slices, los mapas y los canales requieren inicialización y, por ello, el uso de `make`).
 
