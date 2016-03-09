@@ -19,7 +19,7 @@ El libro se distribuye libremente bajo la licencia [Attribution-NonCommercial-Sh
 ## Formatos ##
 El libro está escrito en [Markdown](http://daringfireball.net/projects/markdown/) y se ha convertido en PDF usando [Pandoc](http://johnmacfarlane.net/pandoc/).
 
-La plantilla TeX hace uso de el [remarcador de sintaxis de Javascript de Lena Herrmann](http://lenaherrmann.net/2010/05/20/javascript-syntax-highlighting-in-the-latex-listings-package).
+La plantilla TeX hace uso del [remarcador de sintaxis de Javascript de Lena Herrmann](http://lenaherrmann.net/2010/05/20/javascript-syntax-highlighting-in-the-latex-listings-package).
 
 Los formatos de Kindle y ePub han sido creados usando [Pandoc](http://johnmacfarlane.net/pandoc/).
 
