@@ -1697,7 +1697,7 @@ El reto de la programación concurrente aparece a la hora de tener que compartir
 
 Los canales ayudan a que la programación concurrente sea más sencilla haciendo desaparecer los datos compartidos. Un canal es un medio de comunicación entre go-rutinas que se utiliza para enviar datos. En otras palabras, una go-rutina que quiera enviar datos a otra debe hacerlo mediante un canal. El resultado es que, en un momento puntual, sólo una go-rutina tiene acceso a los datos.
 
-Los canales, como todo lo demás, tienen tipos. En concreto, tienen el mismo tipo que los datos que se van a mandar a través de ellos. Por ejemplo, para crear un canal envíe enteros debemos usar:
+Los canales, como todo lo demás, tienen tipos. En concreto, tienen el mismo tipo que los datos que se van a mandar a través de ellos. Por ejemplo, para crear un canal que envíe enteros debemos usar:
 
 ```go
 c := make(chan int)
