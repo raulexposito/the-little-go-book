@@ -888,7 +888,7 @@ fmt.Println(scores)
 
 La salida es `[1, 2, 999, 4, 5]`.
 
-Esto cambia tu forma de pensar a la hora de programar. Por ejemplo, hay funciones que reciben la posición como un parámetro. En JavaScript, si quieres buscar el primer espacio en un string (si, ¡los slices funcionan también con strings!) a partir de los primeros cinco caracteres, deberíamos escribir:
+Esto cambia tu forma de pensar a la hora de programar. Por ejemplo, hay funciones que reciben la posición como un parámetro. En JavaScript, si quieres buscar el primer espacio en un string (sí, ¡los slices funcionan también con strings!) a partir de los primeros cinco caracteres, deberíamos escribir:
 
 ```go
 haystack = "the spice must flow";
@@ -973,7 +973,7 @@ Usamos `len` para recuperar el número de claves. Para borrar un valor en base a
 // devuelve 1
 total := len(lookup)
 
-// no devuelve nada, puede ser invicado en una clave que no exista
+// no devuelve nada, puede ser invocado en una clave que no exista
 delete(lookup, "goku")
 ```
 
@@ -1049,7 +1049,7 @@ Ha llegado el momento de ver cómo organizar el código.
 
 ## Paquetes
 
-Para poder utilizar complicadas librerias y tener organizado el código fuente de nuestra aplicación es necesario que aprendamos qué son los paquetes. Los nombres de los paquetes en Go siguen la estructura de directorios de tu workspace. Si estamos desarrollando una aplicación de compras, seguramente empecemos con un nombre de paquete llamado "shopping" y pongamos nuestro código fuente en `$GOPATH/src/shopping/`.
+Para poder utilizar complicadas librerías y tener organizado el código fuente de nuestra aplicación es necesario que aprendamos qué son los paquetes. Los nombres de los paquetes en Go siguen la estructura de directorios de tu workspace. Si estamos desarrollando una aplicación de compras, seguramente empecemos con un nombre de paquete llamado "shopping" y pongamos nuestro código fuente en `$GOPATH/src/shopping/`.
 
 De todos modos no querremos poner todo dentro de ese directorio. Por ejemplo, quizá queramos aislar la lógica de la base de datos dentro de un directorio propio. Para conseguir esto, crearemos un subdirectorio en `$GOPATH/src/shopping/db`. El nombre del paquete dentro de este subdirectorio será simplemente `db`, y para acceder a él desde otro paquete, incluido el propio paquete `shopping`, debemos importar `shopping/db`.
 
@@ -1175,7 +1175,7 @@ $GOPATH/src
       main.go
 ```
 
-`pricecheck.go` seguirá importando `shopping/db`, pero `db.go` importará `shopping/models` en lugar de `shopping` para así romper el cíclo. ya que hemos movido la estructura compartida `Item` a `shopping/models/item.go`, necesitamos cambiar `shopping/db/db.go` para referenciar la estructura `Item` desde el paquete `models`:
+`pricecheck.go` seguirá importando `shopping/db`, pero `db.go` importará `shopping/models` en lugar de `shopping` para así romper el ciclo. ya que hemos movido la estructura compartida `Item` a `shopping/models/item.go`, necesitamos cambiar `shopping/db/db.go` para referenciar la estructura `Item` desde el paquete `models`:
 
 ```go
 package db
